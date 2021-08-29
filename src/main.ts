@@ -176,7 +176,7 @@ class LovePageButton extends HTMLElement {
       this.#animeButton();
 
       // buffer the new loves and request an async update
-      this.#bufferedLoves = +1;
+      this.#bufferedLoves += 1;
       this.#updateLoves();
 
       // we optimistic assume the request will happen just right
