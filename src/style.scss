@@ -94,6 +94,10 @@ $button-bg: #d54c6a;
     .loveButton-heart {
       fill: var(--love-icon-fill-active);
     }
+
+    .loveCount {
+      color: var(--love-text-color-active);
+    }
   }
 
   &.animate {
@@ -117,6 +121,18 @@ $button-bg: #d54c6a;
 
 .loveButton:hover .loveButton-heart {
   animation: pulse 0.5s infinite alternate;
+}
+
+.loveCount {
+  color: $button-bg;
+
+  love-page-button:not([compact]) & {
+    margin-left: 8px;
+  }
+}
+
+love-page-button[compact] .buttonText {
+  display: none;
 }
 
 @keyframes topBubbles {
