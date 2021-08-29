@@ -1,8 +1,7 @@
 {
-  "extends": "stylelint-config-sass-guidelines",
+  "extends": "stylelint-config-recess-order",
   "plugins": ["stylelint-order"],
   "rules": {
-    "indentation": "tab",
     "number-leading-zero": null
   }
 }
