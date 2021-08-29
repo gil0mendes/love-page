@@ -3,6 +3,8 @@ import text from "./style.scss";
 // URL for the API entrypoint
 const API_URL = "http://localhost:8080";
 
+const ANIMATION_CLASS = "animate";
+
 /**
  * Get number of loves the given page has.
  *
@@ -46,9 +48,11 @@ async function addLoves(numLoves = 1): Promise<number> {
 }
 
 class LovePageButton extends HTMLElement {
+  private buttonEl!: HTMLButtonElement;
+
   connectedCallback() {
     this.classList.add("loading");
-    this.style.display = "block";
+    this.style.display = "inline-block";
 
     this.innerHTML = `
       <style>${text}</style>
@@ -59,6 +63,23 @@ class LovePageButton extends HTMLElement {
         Love Page
       </button>
     `;
+
+    this.buttonEl = this.querySelector(".loveButton") as HTMLButtonElement;
+
+    this.addEventListener("mousedown", (event) => {
+      if (event.button !== 0) {
+        return;
+      }
+
+      // reset animation
+      this.buttonEl.classList.remove(ANIMATION_CLASS);
+
+      // add animation and them remove remove it
+      this.buttonEl.classList.add(ANIMATION_CLASS);
+      setTimeout(() => {
+        this.buttonEl.classList.remove(ANIMATION_CLASS);
+      }, 700);
+    });
   }
 }
 
