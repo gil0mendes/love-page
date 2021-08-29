@@ -1,7 +1,6 @@
 import text from "./style.scss";
 
-// URL for the API entrypoint
-const API_URL = "http://localhost:8080";
+const API_URL = "https://api.love-page.net";
 
 const CLASS_ANIMATION = "animate";
 const CLASS_LOADING = "loading";
