@@ -1,9 +1,34 @@
 {
-  "name": "component",
-  "version": "0.0.0",
+  "name": "@elementarium/lovepage-button",
+  "version": "1.0.0",
+  "description": "Easy integration for people love your work ❤️",
+  "author": {
+    "name": "Gil Mendes",
+    "email": "gil00mendes@gmail.com",
+    "url": "https://gil0mendes.io/"
+  },
+  "homepage": "https://lovepage.one",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gil0mendes/page-loves/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gil0mendes/page-loves"
+  },
+  "keywords": [
+    "web-component",
+    "button",
+    "likes",
+    "integration"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "build:release": "node build.mjs",
     "serve": "vite preview"
   },
   "devDependencies": {

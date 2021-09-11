@@ -1,6 +1,6 @@
 import text from "./style.scss";
 
-const API_URL = "https://api.love-page.net";
+const API_URL = "https://api.lovepage.one";
 
 const CLASS_ANIMATION = "animate";
 const CLASS_LOADING = "loading";
