@@ -21,14 +21,14 @@ The above will render a love button, persisting loves counts per url.
 
 ## Development
 
-Clone the repo and install dependencies via yarn:
+Clone the repo and install dependencies via pnpm:
 
 ```
-yarn
+pnpm
 ```
 
 The project uses [Vite](https://vitejs.dev/) for development, all the code can be found on the `src` directory. To start the development server run the command:
 
 ```
-yarn dev
+pnpm dev
 ```
