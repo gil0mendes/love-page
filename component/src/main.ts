@@ -73,7 +73,21 @@ const debounce = (fn: Function, delay: number) => {
   };
 };
 
-class LovePageButton extends HTMLElement {
+/**
+ * Base class for the custom element.
+ *
+ * This is a trick to allow the element be polifilled.
+ * @see https://github.com/WebReflection/document-register-element#v1-caveat
+ */
+class HTMLCustomElement extends HTMLElement {
+  constructor(_: void) {
+    // @ts-ignore
+    return (_ = super(_)).init(), _;
+  }
+  init() {}
+}
+
+class LovePageButton extends HTMLCustomElement {
   #buttonEl!: HTMLButtonElement;
   #countEl!: HTMLSpanElement;
 
