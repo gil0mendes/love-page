@@ -30,7 +30,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ~/.pnpm-store
-          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          key: ${{ runner.os }}-${{ hashFiles('component/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-
 
@@ -44,13 +44,8 @@ jobs:
         run: pnpm build:release
 
       - name: Semantic Release and Publish to NPM
-        uses: cycjimmy/semantic-release-action@v2
+        run: pnpm release
         id: semantic
-        with:
-          extra_plugins: |
-            @semantic-release/changelog
-            @semantic-release/git
-            @semantic-release/npm
         env:
           NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
