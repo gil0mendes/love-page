@@ -92,6 +92,11 @@ class LovePageButton extends HTMLCustomElement {
   #countEl!: HTMLSpanElement;
 
   /**
+   * Indicates if the element is already connected to the DOM tree.
+   */
+  #connected = false;
+
+  /**
    * Initial clap count.
    */
   #initialLoveCount!: Promise<number>;
@@ -163,6 +168,11 @@ class LovePageButton extends HTMLCustomElement {
   }
 
   async connectedCallback() {
+    // only initialize the element once
+    if (this.#connected) {
+      return;
+    }
+
     this.classList.add("loading");
     this.style.display = "inline-block";
 
@@ -198,6 +208,8 @@ class LovePageButton extends HTMLCustomElement {
 
     // get initial loves from the page
     this.#getInitialLoves();
+
+    this.#connected = true;
   }
 
   get initialLoveCount() {
