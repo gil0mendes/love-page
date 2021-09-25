@@ -1,3 +1,11 @@
+## [1.0.1](https://github.com/gil0mendes/page-loves/compare/v1.0.0...v1.0.1) (2021-09-25)
+
+
+### Bug Fixes
+
+* allow the element to be polifilled ([0ddda41](https://github.com/gil0mendes/page-loves/commit/0ddda4166bdf2c55506938dea513d9bc91710ebf))
+* only initialise the element once ([c023b12](https://github.com/gil0mendes/page-loves/commit/c023b12b9ecc457e6e93883dcc58cd8fd71347da))
+
 # 1.0.0 (2021-09-11)
 
 
