@@ -27,7 +27,7 @@ async function getLoves(url: string): Promise<number> {
 // Payload for the method used to add loves to a page
 interface LovePagePayload {
   // Page URL which the loves will be associated with
-  url: string;
+  url?: string;
   // Number of loves to be added to the page
   loves: number;
 }
@@ -38,8 +38,11 @@ interface LovePagePayload {
  * @param numLoves Number of loves to add to the page.
  * @returns New number of loves.
  */
-async function addLoves(url: string, numLoves = 1): Promise<number> {
-  const payload: LovePagePayload = { url, loves: numLoves };
+async function addLoves(url: string | null, numLoves = 1): Promise<number> {
+  const basePayload = { loves: numLoves };
+  const payload: LovePagePayload = !!url
+    ? { ...basePayload, url }
+    : basePayload;
 
   const response = await fetch(`${API_URL}/love-page`, {
     method: "POST",
@@ -112,10 +115,6 @@ class LovePageButton extends HTMLCustomElement {
   #totalLoves = 0;
 
   #updateLoves = debounce(async () => {
-    if (!this.url) {
-      return;
-    }
-
     // call the API and update the internal love count
     this.#totalLoves = await addLoves(this.url, this.#bufferedLoves);
     this.#countEl.innerText = String(this.#totalLoves);
