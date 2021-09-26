@@ -10,11 +10,11 @@
   "homepage": "https://lovepage.one",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/gil0mendes/page-loves/issues"
+    "url": "https://github.com/gil0mendes/love-page/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gil0mendes/page-loves"
+    "url": "https://github.com/gil0mendes/love-page"
   },
   "keywords": [
     "web-component",
