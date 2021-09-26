@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/gil0mendes/page-loves/compare/v1.0.1...v1.0.2) (2021-09-26)
+
+
+### Bug Fixes
+
+* allow  making an API with no URL ([87bad7a](https://github.com/gil0mendes/page-loves/commit/87bad7ae5e153eb683a951bcc3ebc36e00c66d60))
+
 ## [1.0.1](https://github.com/gil0mendes/page-loves/compare/v1.0.0...v1.0.1) (2021-09-25)
 
 
