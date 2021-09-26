@@ -14,7 +14,7 @@ const Q_COUNT = ".loveCount";
  * @param url target url to get number of loves to
  * @returns number of loves the page has
  */
-async function getLoves(url?: string): Promise<number> {
+async function getLoves(url: string | null): Promise<number> {
   const baseUrl = `${API_URL}/page-loves`;
   const targetUrl = !!url ? `${baseUrl}?url=${url}` : baseUrl;
 
@@ -23,6 +23,10 @@ async function getLoves(url?: string): Promise<number> {
       "Content-Type": "text/plain",
     },
   });
+
+  if (response.status !== 200) {
+    throw "Invalid request";
+  }
 
   return Number(await response.text());
 }
