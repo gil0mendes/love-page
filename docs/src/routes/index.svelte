@@ -2,6 +2,7 @@
   import { codeBlockCdn, codeBlockInstall, codeBlockUsage } from "../strings";
 
   import ParticleCanvas from "../components/particle-canvas.svelte";
+  import LoveButton from "../components/love-button.svelte";
   import Highlight from "../components/PrismJS.svelte";
 </script>
 
@@ -15,7 +16,7 @@
         LovePage
       </h1>
       <div class="my-8">
-        <love-page-button id="lovePageBtn" compact />
+        <LoveButton />
       </div>
       <p class="text-xl text-gray-600">Easy integration for people love your work.</p>
     </div>
