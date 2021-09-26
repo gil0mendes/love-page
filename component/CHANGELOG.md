@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/gil0mendes/page-loves/compare/v1.0.3...v1.0.4) (2021-09-26)
+
+
+### Bug Fixes
+
+* typescript error ([dcc57b7](https://github.com/gil0mendes/page-loves/commit/dcc57b7228661e37435806db4450ce52d9301e86))
+
 ## [1.0.3](https://github.com/gil0mendes/page-loves/compare/v1.0.2...v1.0.3) (2021-09-26)
 
 
