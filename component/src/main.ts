@@ -14,8 +14,11 @@ const Q_COUNT = ".loveCount";
  * @param url target url to get number of loves to
  * @returns number of loves the page has
  */
-async function getLoves(url: string): Promise<number> {
-  const response = await fetch(`${API_URL}/page-loves?url=${url}`, {
+async function getLoves(url?: string): Promise<number> {
+  const baseUrl = `${API_URL}/page-loves`;
+  const targetUrl = !!url ? `${baseUrl}?url=${url}` : baseUrl;
+
+  const response = await fetch(targetUrl, {
     headers: {
       "Content-Type": "text/plain",
     },
@@ -51,6 +54,10 @@ async function addLoves(url: string | null, numLoves = 1): Promise<number> {
     },
     body: JSON.stringify(payload),
   });
+
+  if (response.status !== 200) {
+    throw "Invalid request";
+  }
 
   return Number(await response.text());
 }
@@ -154,10 +161,6 @@ class LovePageButton extends HTMLCustomElement {
    * @returns
    */
   async #getInitialLoves() {
-    if (!this.url) {
-      return;
-    }
-
     const numLoves = await getLoves(this.url);
     this.classList.remove(CLASS_LOADING);
 
