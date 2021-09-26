@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/gil0mendes/page-loves/compare/v1.0.2...v1.0.3) (2021-09-26)
+
+
+### Bug Fixes
+
+* allow requesting loves with no URL set ([da50eab](https://github.com/gil0mendes/page-loves/commit/da50eab6b904983274a7e9e02ceed1d302e3debb))
+
 ## [1.0.2](https://github.com/gil0mendes/page-loves/compare/v1.0.1...v1.0.2) (2021-09-26)
 
 
